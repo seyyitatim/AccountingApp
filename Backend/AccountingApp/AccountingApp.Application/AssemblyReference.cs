@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace AccountingApp.Application
 {
-    public static class ServiceRegistration
+    public static class AssemblyReference
     {
-        public static void AddApplicationServices(this IServiceCollection collection)
-        {
-            collection.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-        }
+        public static readonly Assembly Assembly = typeof(Assembly).Assembly;
     }
 }
