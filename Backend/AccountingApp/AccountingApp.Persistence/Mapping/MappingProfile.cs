@@ -1,5 +1,7 @@
 ﻿using AccountingApp.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany;
+using AccountingApp.Application.Features.CompanyFeatures.UCAFFeatures.Commands.CreateUCAF;
 using AccountingApp.Domain.AppEntities;
+using AccountingApp.Domain.CompanyEntities;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ namespace AccountingApp.Persistence.Mapping
         public MappingProfile()
         {
             CreateMap<CreateCompanyCommandRequest, Company>().ReverseMap();
+            CreateMap<CreateUCAFCommandRequest, UniformChartOfAccount>().ReverseMap();
         }
     }
 }
