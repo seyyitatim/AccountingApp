@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,11 @@ namespace AccountingApp.Presentation.Abstraction
     [Route("api/[controller]")]
     public class BaseController : ControllerBase
     {
+        protected IMediator _mediator;
+
+        public BaseController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
     }
 }
