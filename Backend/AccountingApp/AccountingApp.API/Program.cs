@@ -1,4 +1,5 @@
 ﻿using AccountingApp.API.Configurations;
+using AccountingApp.API.Middleware;
 using AccountingApp.Domain.AppEntities.Identity;
 using Microsoft.AspNetCore.Identity;
 
@@ -14,6 +15,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseExceptionMiddleware();
 
 app.UseHttpsRedirection();
 

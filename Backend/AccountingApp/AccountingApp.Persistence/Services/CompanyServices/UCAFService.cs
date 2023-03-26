@@ -29,7 +29,7 @@ namespace AccountingApp.Persistence.Services.CompanyServices
             _mapper = mapper;
         }
 
-        public async Task CreateUcafAsync(CreateUCAFCommandRequest request)
+        public async Task CreateUcafAsync(CreateUCAFCommandCommand request)
         {
             _commandRepository.SetDbContextInstance(GetContext(request.CompanyId));
             _unitOfWork.SetDbContextInstance(_context);

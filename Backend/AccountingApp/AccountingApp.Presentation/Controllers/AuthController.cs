@@ -17,7 +17,7 @@ namespace AccountingApp.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<IActionResult> Login(LoginCommand request)
         {
             return Ok(await _mediator.Send(request));
         }

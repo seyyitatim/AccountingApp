@@ -24,7 +24,7 @@ namespace AccountingApp.Persistence.Services.AppServices
             this.mapper = mapper;
         }
 
-        public async Task AddAsync(CreateRoleRequest request)
+        public async Task AddAsync(CreateRoleCommand request)
         {
             CheckIsRoleExistAsync(request.Code, request.Name);
             var role = mapper.Map<AppRole>(request);
@@ -56,7 +56,7 @@ namespace AccountingApp.Persistence.Services.AppServices
             return role;
         }
 
-        public async Task UpdateAsync(UpdateRoleRequest request)
+        public async Task UpdateAsync(UpdateRoleCommand request)
         {
             AppRole role = await GetByIdAsync(request.Id);
             CheckIsRoleExistAsync(request.Code, request.Name);

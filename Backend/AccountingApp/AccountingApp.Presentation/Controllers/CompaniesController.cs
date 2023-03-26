@@ -18,7 +18,7 @@ namespace AccountingApp.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CrateCompany(CreateCompanyCommandRequest request)
+        public async Task<IActionResult> CrateCompany(CreateCompanyCommand request)
         {
             CreateCompanyCommandResponse response = await _mediator.Send(request);
 
@@ -29,7 +29,7 @@ namespace AccountingApp.Presentation.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> MigrateCompanyDatabaseAsync()
         {
-            MigrateCompanyDatabaseRequest request = new();
+            MigrateCompanyDatabaseCommand request = new();
             var response = await _mediator.Send(request);
 
             return Ok(response);

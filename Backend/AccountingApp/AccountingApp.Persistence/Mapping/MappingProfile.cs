@@ -17,9 +17,9 @@ namespace AccountingApp.Persistence.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<CreateCompanyCommandRequest, Company>();
-            CreateMap<CreateUCAFCommandRequest, UniformChartOfAccount>();
-            CreateMap<CreateRoleRequest, AppRole>().BeforeMap((c, a) => a.Id = Guid.NewGuid().ToString());
+            CreateMap<CreateCompanyCommand, Company>();
+            CreateMap<CreateUCAFCommandCommand, UniformChartOfAccount>();
+            CreateMap<CreateRoleCommand, AppRole>().BeforeMap((c, a) => a.Id = Guid.NewGuid().ToString());
         }
     }
 }

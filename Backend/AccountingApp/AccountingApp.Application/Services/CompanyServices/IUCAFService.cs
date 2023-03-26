@@ -9,6 +9,6 @@ namespace AccountingApp.Application.Services.CompanyServices
 {
     public interface IUCAFService
     {
-        Task CreateUcafAsync(CreateUCAFCommandRequest request);
+        Task CreateUcafAsync(CreateUCAFCommandCommand request);
     }
 }

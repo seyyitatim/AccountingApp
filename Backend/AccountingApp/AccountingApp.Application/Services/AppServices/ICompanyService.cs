@@ -11,8 +11,8 @@ namespace AccountingApp.Application.Services.AppServices
 {
     public interface ICompanyService
     {
-        Task CreateCompanyAsync(CreateCompanyCommandRequest request);
-        Task MigrateCompanyDatabaseAsync(MigrateCompanyDatabaseRequest request);
+        Task CreateCompanyAsync(CreateCompanyCommand request);
+        Task MigrateCompanyDatabaseAsync(MigrateCompanyDatabaseCommand request);
         Task<Company?> GetCompanyByNameAsync(string name);
     }
 }

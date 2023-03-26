@@ -12,8 +12,8 @@ namespace AccountingApp.Application.Services.AppServices
 {
     public interface IRoleService
     {
-        Task AddAsync(CreateRoleRequest request);
-        Task UpdateAsync(UpdateRoleRequest request);
+        Task AddAsync(CreateRoleCommand request);
+        Task UpdateAsync(UpdateRoleCommand request);
         Task DeleteByIdAsync(string id);
         Task<IList<AppRole>> GetAllRolesAsync();
         Task<AppRole> GetByIdAsync(string id);

@@ -1,4 +1,5 @@
-﻿using AccountingApp.Presentation;
+﻿using AccountingApp.API.Middleware;
+using AccountingApp.Presentation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
@@ -8,6 +9,8 @@ namespace AccountingApp.API.Configurations
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<ExceptionMiddleware>();
+
             services.AddControllers().AddApplicationPart(typeof(AssemblyReference).Assembly);
 
             services.AddEndpointsApiExplorer();

@@ -20,7 +20,7 @@ namespace AccountingApp.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateRole(CreateRoleRequest request)
+        public async Task<IActionResult> CreateRole(CreateRoleCommand request)
         {
             return Ok(await _mediator.Send(request));
         }
@@ -29,12 +29,12 @@ namespace AccountingApp.Presentation.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllRoles()
         {
-            GetAllRolesRequest request = new();
+            GetAllRolesQuery request = new();
             return Ok(await _mediator.Send(request));
         }
 
         [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateRole(UpdateRoleRequest request)
+        public async Task<IActionResult> UpdateRole(UpdateRoleCommand request)
         {
             return Ok(await _mediator.Send(request));
         }
@@ -42,7 +42,7 @@ namespace AccountingApp.Presentation.Controllers
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> DeleteRole(string id)
         {
-            DeleteRoleResquest request = new() { Id = id };
+            DeleteRoleCommand request = new() { Id = id };
             return Ok(await _mediator.Send(request));
         }
     }

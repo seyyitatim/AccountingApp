@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace AccountingApp.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany
 {
-    public class CreateCompanyCommandResponse
-    {
-        string Message = "Şirket kaydı başarıyla tamamlandı!";
-    }
+    public record CreateCompanyCommandResponse(string Message = "Şirket kaydı başarıyla tamamlandı!");
 }

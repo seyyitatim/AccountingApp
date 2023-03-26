@@ -24,7 +24,7 @@ namespace AccountingApp.Persistence.Services.AppServices
             _mapper = mapper;
         }
 
-        public async Task CreateCompanyAsync(CreateCompanyCommandRequest request)
+        public async Task CreateCompanyAsync(CreateCompanyCommand request)
         {
             Company company = _mapper.Map<Company>(request);
             company.Id = Guid.NewGuid().ToString();
@@ -34,7 +34,7 @@ namespace AccountingApp.Persistence.Services.AppServices
 
         public async Task<Company?> GetCompanyByNameAsync(string name) => await _context.Set<Company>().FirstOrDefaultAsync(p => p.Name == name);
 
-        public async Task MigrateCompanyDatabaseAsync(MigrateCompanyDatabaseRequest request)
+        public async Task MigrateCompanyDatabaseAsync(MigrateCompanyDatabaseCommand request)
         {
             var companies = await _context.Set<Company>().ToListAsync();
 

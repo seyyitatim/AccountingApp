@@ -17,7 +17,7 @@ namespace AccountingApp.Presentation.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateUCAF(CreateUCAFCommandRequest request)
+        public async Task<IActionResult> CreateUCAF(CreateUCAFCommandCommand request)
         {
             return Ok(await _mediator.Send(request));
         }
