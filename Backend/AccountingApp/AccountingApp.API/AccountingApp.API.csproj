@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AccountingApp.Infrastructure\AccountingApp.Infrastructure.csproj" />
     <ProjectReference Include="..\AccountingApp.Persistence\AccountingApp.Persistence.csproj" />
     <ProjectReference Include="..\AccountingApp.Presentation\AccountingApp.Presentation.csproj" />
   </ItemGroup>

@@ -9,5 +9,6 @@ namespace AccountingApp.Domain.AppEntities.Identity
 {
     public class AppRole : IdentityRole<string>
     {
+        public string Code { get; set; }
     }
 }
